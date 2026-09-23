@@ -1,0 +1,21 @@
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                    PORTS                                           NAMES
+98fbd3c4b2d8   redis     "docker-entrypoint.s…"   35 minutes ago   Up 35 minutes             0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp     todo-backend-redis-1
+ff1f66e7a417   mongo     "docker-entrypoint.s…"   35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ docker exec -it todo-backend-redis-1 redis-cli
+127.0.0.1:6379> KEYS
+(error) ERR wrong number of arguments for 'keys' command
+127.0.0.1:6379> KEYS *todo*
+1) "added_todos"
+127.0.0.1:6379> GET added_todos
+"3"
+127.0.0.1:6379> SET added_todos 9001
+OK
+127.0.0.1:6379> DEL added_todos
+(integer) 1
+127.0.0.1:6379> DEL added_todos
+(integer) 1
+127.0.0.1:6379> GET added_todos
+"6"
+127.0.0.1:6379> quit
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ 

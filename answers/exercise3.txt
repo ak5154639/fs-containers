@@ -1,0 +1,334 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Anike> wsl
+aniket@DESKTOP-SF3S63J:/mnt/c/Users/Anike$ docker -v
+
+The command 'docker' could not be found in this WSL 2 distro.
+We recommend to activate the WSL integration in Docker Desktop settings.
+
+For details about using Docker Desktop with WSL 2, visit:
+
+https://docs.docker.com/go/wsl2/
+
+aniket@DESKTOP-SF3S63J:/mnt/c/Users/Anike$ exit
+logout
+PS C:\Users\Anike> docker
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  bake        Build from a file
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  agent*      Docker AI Agent Runner
+  ai*         Docker AI Agent - Ask Gordon
+  builder     Manage builds
+  buildx*     Docker Buildx
+  checkpoint  Manage checkpoints
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  debug*      Get a shell into any image or container
+  desktop*    Docker Desktop commands
+  dhi*        CLI for managing Docker Hardened Images
+  extension*  Manages Docker extensions
+  image       Manage images
+  init*       Creates Docker-related starter files for your project
+  manifest    Manage Docker image manifests and manifest lists
+  mcp*        Docker MCP Plugin
+  model*      Docker Model Runner
+  network     Manage networks
+  offload*    Docker Offload
+  pass*       Docker Pass Secrets Manager Plugin (beta)
+  plugin      Manage plugins
+  scout*      Docker Scout
+  system      Manage Docker
+  volume      Manage volumes
+
+Swarm Commands:
+  config      Manage Swarm configs
+  node        Manage Swarm nodes
+  secret      Manage Swarm secrets
+  service     Manage Swarm services
+  stack       Manage Swarm stacks
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default
+                           "C:\\Users\\Anike\\.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host string        Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info",
+                           "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "C:\\Users\\Anike\\.docker\\ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "C:\\Users\\Anike\\.docker\\cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "C:\\Users\\Anike\\.docker\\key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+PS C:\Users\Anike> wsl
+aniket@DESKTOP-SF3S63J:/mnt/c/Users/Anike$ docker -v
+
+The command 'docker' could not be found in this WSL 2 distro.
+We recommend to activate the WSL integration in Docker Desktop settings.
+
+For details about using Docker Desktop with WSL 2, visit:
+
+https://docs.docker.com/go/wsl2/
+
+aniket@DESKTOP-SF3S63J:/mnt/c/Users/Anike$ exit
+logout
+PS C:\Users\Anike> wsl --status
+Default Distribution: Ubuntu
+Default Version: 2
+PS C:\Users\Anike> wsl -l -v
+  NAME              STATE           VERSION
+* Ubuntu            Stopped         2
+  docker-desktop    Stopped         2
+PS C:\Users\Anike> wsl
+aniket@DESKTOP-SF3S63J:/mnt/c/Users/Anike$ docker -v
+Docker version 29.7.2, build a7dcaa6
+aniket@DESKTOP-SF3S63J:/mnt/c/Users/Anike$ wsl
+wsl: command not found
+aniket@DESKTOP-SF3S63J:/mnt/c/Users/Anike$ exit
+logout
+PS C:\Users\Anike> docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+4f55086f7dd0: Pull complete
+d5e71e642bf5: Download complete
+Digest: sha256:5e23090353324d887c48ad5e5c56d294eab81588df9605b07d1afe895f9cc8f8
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+PS C:\Users\Anike> docker image pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:5e23090353324d887c48ad5e5c56d294eab81588df9605b07d1afe895f9cc8f8
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+PS C:\Users\Anike> docker container run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+PS C:\Users\Anike> docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+6a7c4f6d8c38: Pull complete
+08f5f5b2a2b0: Pull complete
+c04a683f373c: Download complete
+Digest: sha256:513c074113a871b51a8d16ab445c88779d6452d937a164fb5cc479f32668a41d
+Status: Downloaded newer image for ubuntu:latest
+root@2d2e5ec98f7b:/# mkdir /usr/src/app
+root@2d2e5ec98f7b:/# touch /usr/src/app/index.js
+root@2d2e5ec98f7b:/# exit
+exit
+PS C:\Users\Anike> docker container run --rm ubuntu ls -la
+total 60
+drwxr-xr-x   1 root root 4096 Sep 10 14:44 .
+drwxr-xr-x   1 root root 4096 Sep 10 14:44 ..
+-rwxr-xr-x   1 root root    0 Sep 10 14:44 .dockerenv
+drwxr-xr-x   2 root root 4096 Sep  1 20:37 .rock
+lrwxrwxrwx   1 root root    7 Apr 20 08:46 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Apr 20 08:46 boot
+drwxr-xr-x   5 root root  340 Sep 10 14:44 dev
+drwxr-xr-x   1 root root 4096 Sep 10 14:44 etc
+drwxr-xr-x   3 root root 4096 Sep  1 20:36 home
+lrwxrwxrwx   1 root root    7 Apr 20 08:46 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Apr 20 08:46 lib64 -> usr/lib64
+drwxr-xr-x   2 root root 4096 Sep  1 20:35 media
+drwxr-xr-x   2 root root 4096 Sep  1 20:35 mnt
+drwxr-xr-x   2 root root 4096 Sep  1 20:35 opt
+dr-xr-xr-x 246 root root    0 Sep 10 14:44 proc
+drwx------   2 root root 4096 Sep  1 20:36 root
+drwxr-xr-x   4 root root 4096 Sep  1 20:36 run
+lrwxrwxrwx   1 root root    8 Apr 20 08:46 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4096 Sep  1 20:35 srv
+dr-xr-xr-x  13 root root    0 Sep 10 14:44 sys
+drwxrwxrwt   2 root root 4096 Sep  1 20:36 tmp
+drwxr-xr-x  12 root root 4096 Sep  1 20:35 usr
+drwxr-xr-x  11 root root 4096 Sep  1 20:36 var
+PS C:\Users\Anike> container ls -a
+container : The term 'container' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ container ls -a
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (container:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Anike> docker container ls -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+2d2e5ec98f7b   ubuntu        "bash"     9 minutes ago    Exited (0) 8 minutes ago              dreamy_cori
+e46237468fb9   hello-world   "/hello"   12 minutes ago   Exited (0) 12 minutes ago             sweet_vaughan
+a17d943a6b29   hello-world   "/hello"   31 minutes ago   Exited (0) 31 minutes ago             charming_mayer
+PS C:\Users\Anike> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\Anike> docker start hello-world
+Error response from daemon: No such container: hello-world
+failed to start containers: hello-world
+PS C:\Users\Anike> docker start 2d2e5ec98f7b
+2d2e5ec98f7b
+PS C:\Users\Anike> docker start e46237468fb9
+e46237468fb9
+PS C:\Users\Anike> docker container ls -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+2d2e5ec98f7b   ubuntu        "bash"     13 minutes ago   Up About a minute                     dreamy_cori
+e46237468fb9   hello-world   "/hello"   16 minutes ago   Exited (0) 57 seconds ago             sweet_vaughan
+a17d943a6b29   hello-world   "/hello"   35 minutes ago   Exited (0) 35 minutes ago             charming_mayer
+PS C:\Users\Anike> docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS         PORTS     NAMES
+2d2e5ec98f7b   ubuntu    "bash"    14 minutes ago   Up 2 minutes             dreamy_cori
+PS C:\Users\Anike> docker kill dreamy_cori
+dreamy_cori
+PS C:\Users\Anike> docker container ls -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                        PORTS     NAMES
+2d2e5ec98f7b   ubuntu        "bash"     15 minutes ago   Exited (137) 32 seconds ago             dreamy_cori
+e46237468fb9   hello-world   "/hello"   18 minutes ago   Exited (0) 2 minutes ago                sweet_vaughan
+a17d943a6b29   hello-world   "/hello"   37 minutes ago   Exited (0) 37 minutes ago               charming_mayer
+PS C:\Users\Anike> docker start -i dreamy_cori
+root@2d2e5ec98f7b:/# apt-get update
+Get:1 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+Get:2 http://archive.ubuntu.com/ubuntu resolute InRelease [136 kB]
+Get:3 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [578 kB]
+Get:4 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+Get:6 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Packages [13.6 kB]
+Get:7 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [212 kB]
+Get:8 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 Packages [493 kB]
+Get:9 http://archive.ubuntu.com/ubuntu resolute/restricted amd64 Packages [189 kB]
+Get:10 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 Packages [352 kB]
+Get:11 http://archive.ubuntu.com/ubuntu resolute/universe amd64 Packages [20.1 MB]
+Get:12 http://archive.ubuntu.com/ubuntu resolute/main amd64 Packages [1874 kB]
+Get:13 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [14.6 kB]
+Get:14 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [505 kB]
+Get:15 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [339 kB]
+Get:16 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [744 kB]
+Get:17 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Packages [3306 B]
+Fetched 26.0 MB in 7s (3653 kB/s)
+Reading package lists... Done
+root@2d2e5ec98f7b:/# apt-get -y install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Solving dependencies... Done
+Suggested packages:
+  hunspell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 7 not upgraded.
+Need to get 289 kB of archives.
+After this operation, 893 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 nano amd64 8.7.1-1ubuntu0.1 [289 kB]
+Fetched 289 kB in 1s (219 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 1.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 1.)
+debconf: falling back to frontend: Teletype
+Selecting previously unselected package nano.
+(Reading database ... 7724 files and directories currently installed.)
+Preparing to unpack .../nano_8.7.1-1ubuntu0.1_amd64.deb ...
+Unpacking nano (8.7.1-1ubuntu0.1) ...
+Setting up nano (8.7.1-1ubuntu0.1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) does not exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) does not exist
+root@2d2e5ec98f7b:/# nano /usr/src/app/index.js
+root@2d2e5ec98f7b:/# nano /usr/src/app/index.js
+root@2d2e5ec98f7b:/#

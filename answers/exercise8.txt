@@ -1,0 +1,81 @@
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ docker compose -f docker-compose.dev.yml up -d
+WARN[0000] Found orphan containers (todo-backend-app-1) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
+[+] up 2/2
+ ✔ Network todo-backend_default   Created                                                                                                                 0.1s
+ ✔ Container todo-backend-mongo-1 Started                                                                                                                 0.6s
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ docker compose ls
+NAME                STATUS              CONFIG FILES
+todo-backend        running(1)          /mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend/docker-compose.dev.yml
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                        PORTS                                           NAMES
+bde370e76bf1   mongo     "docker-entrypoint.s…"   About a minute ago   Up About a minute (healthy)   0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ docker exec -it todo-backend-mongo-1 mongosh -u root -p example
+Current Mongosh Log ID: 6aae9c0ea6be5e19cfe6033d
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.11.1
+Using MongoDB:          8.3.11
+Using Mongosh:          2.11.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, pseudo-anonymous usage data is collected from interactive and agentic sessions only, and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2026-09-19T14:26:19.472+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-09-19T14:26:20.129+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-09-19T14:26:20.129+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-09-19T14:26:20.129+00:00: We suggest setting the contents of sysfsFile to 0.
+   2026-09-19T14:26:20.129+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+------
+
+test> show dbs
+admin         100.00 KiB
+config         12.00 KiB
+local          72.00 KiB
+the_database   40.00 KiB
+test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todo.find({})
+
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('6aae9b8a1f700b55a7148692'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('6aae9b8a1f700b55a7148693'),
+    text: 'Learn about containers',
+    done: false
+  }
+]
+the_database> db.todos.insertOne({test:"Increase the number of tools in my tool belt", done: false})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6aae9cafa6be5e19cfe6033e')
+}
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('6aae9b8a1f700b55a7148692'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('6aae9b8a1f700b55a7148693'),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId('6aae9cafa6be5e19cfe6033e'),
+    test: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
+the_database> quit
+aniket@DESKTOP-SF3S63J:/mnt/d/Projects/FullStack-Notes--University-of-Helsinki/part12/fs-containers/todo-app/todo-backend$ 
