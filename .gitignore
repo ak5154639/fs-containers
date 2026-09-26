@@ -8,3 +8,6 @@ todo-app/mongo_data/
 todo-tests/test-results/
 todo-tests/playwright-report/
 todo-tests/playwright/.cache/
+
+/test-results/
+/todo-app/todo-backend/redis_data/
